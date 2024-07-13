@@ -1,0 +1,216 @@
+/* ==== BANNER ==== */
+.banner {
+    height: 315px;
+    width: 100%;
+    position: relative;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+    }
+
+    .banner-block {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .banner-block__heading {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .banner-block__heading img {
+        width: 60px;
+        height: 60px;
+        opacity: 1;
+    }
+
+    .banner-block__heading p {
+        font-size: 48px;
+        font-weight: 500px;
+        margin: 0;
+    }
+
+    .banner-block__text {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner-block__text span {
+        padding: 5px;
+    }
+
+}
+
+/* ==== END BANNER ==== */
+
+
+
+/* ===== CHECK OUT ===== */
+.checkout {
+    padding: 40px;
+
+
+    /* .checkout-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    } */
+
+    .bill {
+        padding: 20px 50px;
+
+    }
+
+    .form-bill {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+    }
+
+    .bill-heading {
+        font-size: 36px;
+        font-weight: 600px;
+    }
+
+    .bill-full-name {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .bill-block__name {
+        font-weight: 500;
+    }
+
+    .bill-block-input {
+        width: 210px;
+        height: 55px;
+        padding-left: 15px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid #9F9F9F;
+        margin: 25px 0;
+    }
+
+    .bill-body {
+        display: flex;
+        flex-flow: column;
+    }
+
+    /* .bill-body__name {
+        padding: 20px 0;
+    } */
+
+    .bill-body__input {
+        padding-left: 15px;
+        height: 55px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid #9F9F9F;
+        margin: 25px 0;
+    }
+
+    .bill-products {
+        /* background-color: #B0B0B0; */
+        padding: 0px 40px;
+    }
+
+    .bill-products-heading {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #D9D9D9;
+    }
+
+    .heading__left--title {
+        font-weight: 500;
+        font-size: 24px;
+
+    }
+
+    .heading__right--title {
+        font-weight: 500;
+        font-size: 24px;
+        text-align: right;
+    }
+
+    .heading__left--text {
+        padding: 15px 0;
+        margin: 0;
+    }
+
+    .heading__right--text {
+        padding: 15px 0;
+        text-align: right;
+        margin: 0;
+    }
+
+    .color {
+        color: #9F9F9F;
+        font-weight: 400;
+    }
+
+    .orange {
+        color: #B88E2F;
+        font-size: 24px;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .totals {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .desc__title {
+        font-weight: 400;
+    }
+
+    .desc__text--color {
+        line-height: 24px;
+        color: #9F9F9F;
+        font-weight: 300;
+    }
+
+    .desc-check {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .desc-check:hover {
+        color: #000;
+    }
+
+    .desc__input--color {
+        color: #9F9F9F;
+        font-weight: 500;
+        border-radius: 50%;
+    }
+
+    .desc__text {
+        line-height: 24px;
+    }
+
+    .desc__btn {
+        width: 320px;
+        height: 65px;
+        border-radius: 15px;
+        border: 1px solid black;
+        background: none;
+        margin: 40px 100px;
+    }
+}
+
+/* ===== END CHECK OUT ===== */

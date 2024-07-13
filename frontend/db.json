@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": "514e",
+      "name": "Sản phẩm A",
+      "price": 24029,
+      "discount": 40
+    },
+    {
+      "id": "81a8",
+      "name": "thêm giá",
+      "price": "200000",
+      "discount": ""
+    }
+  ]
+}
