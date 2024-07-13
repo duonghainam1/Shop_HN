@@ -12,13 +12,24 @@ import {
 } from "@/components/ui/table"
 import { Button } from '../../../../components/ui/button';
 import { Link } from 'react-router-dom';
+import useCategoryQuery from '@/hooks/category/useCategoryQuery';
 
 const ListProducts = () => {
     const { mutate } = useProductsMutation({
         action: "delete",
     })
-    const { data, isLoading } = useProductsQuery();
-    if (isLoading) return <div>Loading..</div>
+    const { data: products, isLoading: productsLoading } = useProductsQuery();
+    const { data: categories, isLoading: categoriesLoading } = useCategoryQuery();
+
+    if (productsLoading || categoriesLoading) return <div>Loading...</div>;
+
+    const getCategoryName = (categoryId: any) => {
+        const category = categories.find((cat: any) => cat._id === categoryId);
+        return category ? category.name : "Unknown";
+    };
+
+
+    if (productsLoading) return <div>Loading..</div>
     return (
         <>
             <div className='flex justify-between'>
@@ -40,7 +51,7 @@ const ListProducts = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {data?.map((product: Iproduct, index: number) => {
+                    {products?.map((product: Iproduct, index: number) => {
                         return (
                             <TableRow key={index}>
                                 <TableCell className="font-medium">{index + 1}</TableCell>
@@ -49,7 +60,7 @@ const ListProducts = () => {
                                 <TableCell className='border text-center'><img src={product.image} width={100} alt="" /></TableCell>
                                 <TableCell className='border text-center'>{product.description}</TableCell>
                                 <TableCell className='border text-center'>{product.discount}</TableCell>
-                                <TableCell className='border text-center'>{product.category}</TableCell>
+                                <TableCell className='border text-center'>{getCategoryName(product.category)}</TableCell>
                                 <TableCell className='border text-center'>
                                     <Button className='bg-red-500 mx-6' onClick={() => mutate(product)}>Xóa</Button>
                                     <Link to={`/admin/products/edit/${product._id}`}><Button className='my-5 bg-blue-500'>Sửa</Button></Link>

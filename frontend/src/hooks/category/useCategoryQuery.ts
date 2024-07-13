@@ -7,6 +7,8 @@ const useCategoryQuery = (id?: number | string) => {
         queryFn: async () => (id ? await getCategoryById(id) : await getAllCategory())
 
     })
+    console.log(data);
+
     return { data, ...rest }
 }
 export default useCategoryQuery

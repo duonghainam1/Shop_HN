@@ -58,14 +58,18 @@ export async function get_orders_client(req, res) {
 }
 export const getOrderById = async (req, res) => {
     try {
-        const { userId, orderId } = req.params;
-        const order = await Order.findOne({ userId, _id: orderId });
+        const order = await Order.findById(req.params.id);
+        console.log(order);
         if (!order) {
-            return res.status(StatusCodes.NOT_FOUND).json({ error: "Không tìm thấy đơn đặt hàng" });
+            return res
+                .status(StatusCodes.NOT_FOUND)
+                .json({ error: "Order not found" });
         }
         return res.status(StatusCodes.OK).json(order);
     } catch (error) {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
+        return res
+            .status(StatusCodes.INTERNAL_SERVER_ERROR)
+            .json({ error: error.message });
     }
 };
 export const updateOrder = async (req, res) => {

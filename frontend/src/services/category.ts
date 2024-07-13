@@ -43,8 +43,8 @@ export const deleteCategory = async (id: number | string) => {
 export const updateCategory = async (category: ICategory) => {
     try {
         const response = await instance.put(`/category/${category._id}`, category)
+        console.log(response);
         return response.data
-
     } catch (error) {
 
     }

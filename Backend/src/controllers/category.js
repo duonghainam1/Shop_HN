@@ -50,6 +50,7 @@ export const deleteCategory = async (req, res) => {
 export const updateCategory = async (req, res) => {
     try {
         const category = await Category.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+        console.log(category);
         return res.status(StatusCodes.OK).json({
             message: "Cập nhật thành công",
             category

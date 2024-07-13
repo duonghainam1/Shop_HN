@@ -11,6 +11,7 @@ type Inputs = {
     name: string,
 }
 const useCategoryMutation = ({ action }: useCategoryMutationProps) => {
+
     const { toast } = useToast()
     const form = useForm<Inputs>({
         defaultValues: {
@@ -32,6 +33,7 @@ const useCategoryMutation = ({ action }: useCategoryMutationProps) => {
                     await updateCategory(category)
                     toast({
                         title: "Cập nhật danh mục thành công",
+
                         variant: "success"
                     })
                     break;
@@ -50,6 +52,7 @@ const useCategoryMutation = ({ action }: useCategoryMutationProps) => {
         onSuccess: () => {
             queryClient.invalidateQueries({
                 queryKey: ["CATEGORY_KEY"]
+
             })
             form.reset();
 

@@ -20,7 +20,7 @@ const UpdateCategory = () => {
         action: "update"
     });
     useEffect(() => {
-        form.reset(data);
+        form.reset(data?.category);
     }, [id, form, data]);
 
     return (
