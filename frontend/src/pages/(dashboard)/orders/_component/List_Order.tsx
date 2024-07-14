@@ -19,7 +19,7 @@ const List_Order = () => {
     const { data, isLoading } = Query_Orders();
     console.log(data);
     const formatDate = (datetime: any) => {
-        if (!datetime) return ""; // Bảo vệ trường hợp datetime không tồn tại
+        if (!datetime) return "";
         const date = new Date(datetime);
         return date.toLocaleDateString();
     }
