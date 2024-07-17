@@ -24,7 +24,7 @@ const ProductsListShop = ({ featured, data }: ProductListProps) => {
         < section className="new1" >
             <div className="container">
                 <div className="products-body-item">
-                    {filteredProducts?.map((product: Iproduct, index: number) => {
+                    {filteredProducts?.map((product: any, index: number) => {
                         return (
 
                             <div className="products-body" key={index}>
