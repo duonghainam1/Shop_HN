@@ -4,6 +4,7 @@ export interface Iproduct {
     price: number,
     category?: string,
     image: string,
+    quantity?: number,
     gallery?: string[],
     description: string,
     discount: number,

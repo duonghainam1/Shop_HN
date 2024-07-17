@@ -36,8 +36,8 @@ const ProductsListShop = ({ featured, data }: ProductListProps) => {
                                         <h1 className="box_heading">{product.name}</h1>
                                         <p className="box_text">Stylish cafe chair</p>
                                         <div className="box_price">
-                                            <p className="price_left">{product?.price - (product?.price * (product.discount / 100))}</p>
-                                            <p className="price_right"> <s>{product.price}</s> </p>
+                                            <p className="price_left">{(product?.price - (product?.price * (product.discount / 100))).toLocaleString('vi', { style: 'currency', currency: 'VND' })}</p>
+                                            <p className="price_right"> <s>{product.price.toLocaleString('vi', { style: 'currency', currency: 'VND' })}</s> </p>
                                         </div>
                                     </div>
                                     <div className="item_sale">

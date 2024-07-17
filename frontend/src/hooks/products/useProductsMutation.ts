@@ -98,7 +98,7 @@ type useProductMutationProps = {
 const useProductMutation = ({ action, onSuccess }: useProductMutationProps) => {
     const queryClient = useQueryClient();
     const form = useForm({
-        resolver: joiResolver(productsSchema),
+        // resolver: joiResolver(productsSchema),
         defaultValues: {
             name: "",
             price: 0,
@@ -107,6 +107,8 @@ const useProductMutation = ({ action, onSuccess }: useProductMutationProps) => {
             discount: 0,
             featured: false,
             countInStock: 0,
+            gallery: [],
+            image: "",
         },
     });
     const { mutate, ...rest } = useMutation({
@@ -115,7 +117,7 @@ const useProductMutation = ({ action, onSuccess }: useProductMutationProps) => {
                 case "add":
                     return await addProducts(product);
                 case "delete":
-                    return window.confirm('Bạn có chắc chắn không?') && await deleteProducts(product._id)
+                    return window.confirm('Bạn có chắc chắn không?') && await deleteProducts(product._id!)
                 case "update":
                     return await updateProducts(product);
                 default:

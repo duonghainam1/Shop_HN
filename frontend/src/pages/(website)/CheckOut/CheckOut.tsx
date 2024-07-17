@@ -90,7 +90,7 @@ const CheckOut = () => {
                                             </div>
                                             <div className="bill-products-heading__right">
                                                 <p className="heading__right--title">Subtotal</p>
-                                                <p className="heading__right--text">{item.price}</p>
+                                                <p className="heading__right--text">{item.price.toLocaleString('vi', { style: 'currency', currency: 'VND' })}</p>
                                                 <p className="heading__right--text">{item.quantity}</p>
                                                 <p className="heading__right--text">{
                                                     <img src={item.image} width={100} alt="" />
@@ -101,7 +101,7 @@ const CheckOut = () => {
                                     ))}
                                     <div className="totals">
                                         <p className="heading__left--text">Total</p>
-                                        <p className="heading__right--text orange">{calcuateTotal()}</p>
+                                        <p className="heading__right--text orange">{calcuateTotal().toLocaleString('vi', { style: 'currency', currency: 'VND' })}</p>
                                     </div>
                                     <div className="bill-products-desc">
                                         <div className="w-full p-2 border rounded-t text-xs mb-2">
