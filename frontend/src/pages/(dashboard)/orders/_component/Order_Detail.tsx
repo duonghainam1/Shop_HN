@@ -74,7 +74,7 @@ const Order_Detail = () => {
                             <p>{data.customerInfo.name}</p>
                             <p>{data.customerInfo.phone}</p>
                             <p>{data.customerInfo.email}</p>
-                            <p>{data.customerInfo.address}</p>
+                            <p>{data.customerInfo.address + " - " + data.customerInfo.city}</p>
                         </div>
                     </div>
                     <div className="flex gap-6">
